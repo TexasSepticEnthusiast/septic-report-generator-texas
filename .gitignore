@@ -1,0 +1,11 @@
+# Excel
+~$xls*
+*.xlsx
+!workbooks/**/*.xlsx
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
