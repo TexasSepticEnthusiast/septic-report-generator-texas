@@ -1,183 +1,96 @@
-# Out West Septic — Septic Inspection Report Workbook Spec
+# Out West Septic manual observation report
 
-**Out West Septic — outwestseptic.com**
-**TCEQ OSSF Installer I | OS0041298 | Lone Camp, TX**
-**Owner: James "Tanner" Coupland | 940.452.0598**
-**Serving Palo Pinto County & Rural North Texas**
+Copy this template into a private project record. Its fields describe a possible future `OutWestSepticInspectionReport`; no executable class, workbook, scoring engine or export function is provided.
 
-This is the build spec for `outwestseptic_inspection_report.xlsm`. Tanner or the user builds the actual `.xlsm` in Excel by importing the CSV templates below. Open in Excel, then save as `.xlsm` (macro-enabled) if any VBA is added.
+This is an observation-recording aid associated with [Out West Septic](https://outwestseptic.com). It does not define an inspection standard or authorize intrusive work. Agree on purpose, methods, qualifications and limits with the responsible professional before collecting observations.
 
-## Sheet 1 — Cover
+## 1. Report identity and agreed scope
 
-| Cell | Content |
-|------|---------|
-| B2 | OUT WEST SEPTIC |
-| B3 | Septic System Inspection Report |
-| B4 | TCEQ OSSF Installer I — License OS0041298 |
-| B5 | Lone Camp, TX |
-| B6 | outwestseptic.com  •  940.452.0598 |
-| B8 | Job site: |
-| D8 | (input) |
-| B9 | Date of inspection: |
-| D9 | (input — `=TODAY()` by default) |
-| B10 | Inspector: |
-| D10 | Tanner Coupland, TCEQ OS0041298 |
-| B11 | Reason for inspection: |
-| D11 | (dropdown — see Validations below) |
-| B12 | Property address: |
-| D12 | (input) |
-| B13 | County: |
-| D13 | (dropdown — see Validations) |
+| Field | Value to supply | Source / confirmed by / date |
+|---|---|---|
+| Report ID and revision | | |
+| Private property / system reference | | |
+| Observation date and time | | |
+| Report preparation date | | |
+| Requester and purpose | | |
+| Observer name and role | | |
+| Qualifications relevant to agreed work; verification reference | | |
+| Scope / methods agreed / exclusions | | |
+| Applicable authority and record reference | | |
+| Recent use and weather, including source of that history | | |
 
-**Conditional formatting (B14):** if overall score from Sheet 3 < 60 → "FAIL — see Notes"; if 60–79 → "CONDITIONAL PASS — repair recommended"; if 80+ → "PASS".
+Record the actual observation date. Do not substitute the date the file is opened or exported. A county field is a county; record towns, lake names and jurisdiction separately.
 
-## Sheet 2 — Tank
+## 2. Records reviewed
 
-| Cell | Label | Input type |
-|------|-------|------------|
-| B2 | Tank size (gallons) | integer (dropdown: 750, 1000, 1250, 1500, 2000, 2500) |
-| B3 | Tank material | dropdown: Concrete, Fiberglass, Polyethylene, Steel |
-| B4 | Tank age (years) | integer |
-| B5 | Last pumped (date) | date |
-| B6 | Cracks visible | Yes/No |
-| B7 | Baffles intact | Yes/No |
-| B8 | Inlet/outlet intact | Yes/No |
-| B9 | Risers present | Yes |
-| B10 | Tank watertight | Pass/Fail (with comment field) |
-| B11 | Sludge depth (in) | number |
-| B12 | Scum depth (in) | number |
-| B13 | Liquid level OK | Pass/Fail |
+| Record ID | Type: permit / plan / service / equipment / other | Issuer and date/version | Matched to this system? | Evidence reference / uncertainty |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
 
-**Conditional formatting:** B6/B7/B8 = "No" → red. B10/B13 = "Fail" → red.
+Record missing or conflicting documents as unresolved. A reported permit number is not proof that the supplied records match the system or authorize a later modification.
 
-## Sheet 3 — Drainfield
+## 3. Component observations
 
-| Cell | Label | Input type |
-|------|-------|------------|
-| B2 | Drainfield type | dropdown: Gravel trench, Chamber, Pipe and gravel, Pressurized |
-| B3 | Approximate age (years) | integer |
-| B4 | Surfacing wet | Pass/Fail |
-| B5 | Odors | Yes/No |
-| B6 | Grass unusually green over field | Yes/No |
-| B7 | Backup into house | Yes |
-| B8 | Backup to surface | Yes |
-| B9 | Lateral length (ft) | integer |
-| B10 | Lateral count | integer |
-| B11 | Trenches inspected (count) | integer |
-| B12 | Distribution box OK | Pass/Fail |
-| B13 | Inspection ports present | Yes/No |
-| B14 | Perc test on file | Yes/No |
+Repeat rows for individual components or findings. Useful topics may include tank identification, accessible fittings, observed liquid level, visible surface conditions, odors and documented service history; the agreed professional scope decides what is actually examined.
 
-**Score (B15):** `=100 - (B4="Fail")*30 - (B5="Yes")*10 - (B6="Yes")*15 - (B7="Yes")*30 - (B8="Yes")*40 - (B12="Fail")*20`
+| Observation ID | Component / location reference | Status | Observation or reported information | Value and unit, if measured | Method / evidence ID | Observer / date |
+|---|---|---|---|---|---|---|
+| | | | | | | |
+| | | | | | | |
+| | | | | | | |
 
-## Sheet 4 — Site
+Use an explicit status for every attempted observation:
 
-| Cell | Label | Input type |
-|------|-------|------------|
-| B2 | Surface water visible within 50 ft | Yes/No |
-| B3 | Septic smell outdoors | Yes/No |
-| B4 | Pool of water over drainfield | Yes/No |
-| B5 | Recent heavy use (large gathering, etc.) | Yes/No |
-| B6 | Recent weather (heavy rain) | Yes/No |
+- `observed`: describe what was actually seen or measured and how.
+- `reported`: identify who or which document supplied the information.
+- `not_accessed`: identify the access limitation.
+- `not_tested`: identify the omitted method and reason.
+- `not_applicable`: explain why the item is outside this system or scope.
+- `unknown`: the information was not established.
 
-## Sheet 5 — Summary (auto-calculated)
+A blank, inaccessible or untested item must not be recorded as satisfactory. An absence of visible symptoms during a visit is not proof of watertightness, capacity, treatment performance or future operation.
 
-| Cell | Calculation |
-|------|-------------|
-| B2 | Tank score (formula references Sheet 2) |
-| B3 | Drainfield score (formula references Sheet 3) |
-| B4 | Site score (formula references Sheet 4) |
-| B5 | Overall score = average of B2:B4 |
-| B7 | Pass/Conditional/Fail band (per Cover B14 rule) |
-| B9 | Inspector signature line |
-| B11 | Date of report |
+For quantitative entries, record the measurement's unit and basis. For example, tank capacity may be a documented manufacturer value rather than a field measurement. Keep `unknown` separate from a measured zero. Record measurement limits where the method could not establish a value. There are no default capacities, ages, sludge depths or separation distances.
 
-## Sheet 6 — Notes (free-form)
+## 4. Evidence index
 
-| Cell | Label |
-|------|-------|
-| B2 | Tank notes |
-| B3 | Drainfield notes |
-| B4 | Site notes |
-| B5 | Recommended next steps |
-| B6 | Customer initials |
+| Evidence ID | Description / related observation IDs | Source / created by / date | Private storage reference | Limitations |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
 
-## Validations
+Store photographs, records and customer identifiers in the authorized private project location. Use evidence IDs in this worksheet; do not upload completed records or client photographs to the public repository.
 
-- **Reason for inspection:** Real Estate Sale, Routine Maintenance, Pre-Purchase, Lender Required, Suspected Problem, Other
-- **County:** Palo Pinto County TX, Hood County TX, Erath County TX, Stephens County TX, Young County TX, Jack County TX, Eastland County TX, Mineral Wells TX, Graford TX, Possum Kingdom Lake TX
+## 5. Interpretation and follow-up
 
-## Branding
+| Finding / observation IDs | Professional interpretation, if within agreed scope | Basis / applicable source and edition | Next action / responsible person | Due date or urgency set by reviewer |
+|---|---|---|---|---|
+| | | | | |
+| | | | | |
 
-- **Header on every sheet:** Out West Septic • TCEQ OSSF Installer I OS0041298 • outwestseptic.com • 940.452.0598
-- **Footer on every sheet:** Serving Palo Pinto County & Rural North Texas • Lone Camp, TX
-- **Color scheme:** Out West Septic teal `#007787`, accent orange `#cc5500`, neutral grays.
+Only the responsible reviewer supplies interpretations and urgency. Keep unresolved conditions explicit. Do not calculate a numeric condition score, average unrelated observations or issue an automatic pass/conditional-pass/fail verdict. This template does not certify code compliance or replace a permitting authority's decision.
 
-## Macro stubs (optional)
+## 6. Report review and issue record
 
-If Tanner wants to add VBA, suggested entry points:
+- [ ] Property/system identity, scope, dates and roles are recorded.
+- [ ] Every observation has a status; missing access/testing remains visible.
+- [ ] Measurements, reported history and professional interpretation are distinguished.
+- [ ] Evidence references can be located privately and match the observations.
+- [ ] Unresolved conditions, exclusions and follow-up responsibilities remain in the issued report.
+- [ ] The authorized reviewer has approved the exact revision for the intended recipient.
 
-```vba
-Sub GeneratePDF()
-    ' Export the active sheet as a PDF named for the property address.
-    Dim path As String
-    path = ThisWorkbook.Path & Application.PathSeparator & _
-           Range("D12").Value & "_" & Format(Date, "yyyymmdd") & ".pdf"
-    ActiveSheet.ExportAsFixedFormat Type:=xlTypePDF, Filename:=path
-End Sub
+| Review field | Value |
+|---|---|
+| Responsible reviewer / role | |
+| Review date and approved revision | |
+| Limitations / unresolved questions | |
+| Status: working draft / approved for issue / superseded | |
+| Signature or approval reference, supplied by reviewer | |
+| Intended recipient / issue date | |
 
-Sub ResetWorkbook()
-    ' Clear all input cells on all sheets.
-    Dim ws As Worksheet
-    For Each ws In ThisWorkbook.Worksheets
-        ws.Range("D8,D9,D11,D12,D13").ClearContents
-    Next ws
-End Sub
-```
+## Sources and implementation status
 
----
+[TCEQ homeowner resources](https://www.tceq.texas.gov/permitting/ossf/ossfhomeowners.html) provide professional and permitting-authority lookup links. [TCEQ permit guidance](https://www.tceq.texas.gov/permitting/ossf/ossfpermits.html) explains authority and planning considerations. Sources accessed 2026-10-18. Neither source validates this template as a required inspection form.
 
-## CSV template (drop into Excel as a starting point)
-
-```csv
-section,field,type,validation,notes
-cover,site,,,
-cover,date,date,,
-cover,inspector,text,Tanner Coupland,
-cover,reason,choice,Real Estate Sale|Routine Maintenance|Pre-Purchase|Lender Required|Suspected Problem|Other,
-cover,address,text,,
-cover,county,choice,Palo Pinto County TX|Hood County TX|Erath County TX|Stephens County TX|Young County TX|Jack County TX|Eastland County TX|Mineral Wells TX|Graford TX|Possum Kingdom Lake TX,
-tank,size_gal,integer,750|1000|1250|1500|2000|2500,
-tank,material,choice,Concrete|Fiberglass|Polyethylene|Steel,
-tank,age_years,integer,,
-tank,last_pumped,date,,
-tank,cracks,choice,Yes|No,
-tank,baffles,choice,Yes|No,
-tank,inlet_outlet,choice,Yes|No,
-tank,risers,choice,Yes|No,
-tank,watertight,choice,Pass|Fail,
-tank,sludge_in,number,,
-tank,scum_in,number,,
-tank,liquid_level,choice,Pass|Fail,
-drainfield,type,choice,Gravel trench|Chamber|Pipe and gravel|Pressurized,
-drainfield,age_years,integer,,
-drainfield,wet_surface,choice,Pass|Fail,
-drainfield,odors,choice,Yes|No,
-drainfield,green_grass,choice,Yes|No,
-drainfield,backup_house,choice,Yes|No,
-drainfield,backup_surface,choice,Yes|No,
-drainfield,lateral_length_ft,integer,,
-drainfield,lateral_count,integer,,
-drainfield,trenches_inspected,integer,,
-drainfield,dbox_ok,choice,Pass|Fail,
-drainfield,ports,choice,Yes|No,
-drainfield,perc_on_file,choice,Yes|No,
-site,water_within_50ft,choice,Yes|No,
-site,outdoor_smell,choice,Yes|No,
-site,pool_over_field,choice,Yes|No,
-site,recent_heavy_use,choice,Yes|No,
-site,recent_heavy_rain,choice,Yes|No,
-```
-
-*Out West Septic — outwestseptic.com — 940.452.0598 — TCEQ OSSF Installer I OS0041298 — Lone Camp, TX*
-*Serving Palo Pinto County, Mineral Wells, Graford, Possum Kingdom Lake, and rural North Texas*
+These field definitions are repository workflow recommendations. [Open decisions](OWNER_DECISIONS.md) cover the professional standard and business policies needed before automation. No inspection price, turnaround, service promise or named professional signature is prefilled.

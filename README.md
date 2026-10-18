@@ -1,37 +1,25 @@
-# Texas Septic Inspection Report
+# Out West Septic observation report worksheet
 
-Build spec for the Out West Septic septic inspection report workbook. Forked from the [texas-septic-toolkit](https://github.com/TexasSepticEnthusiast/texas-septic-toolkit). Built by [Out West Septic](https://outwestseptic.com) in Lone Camp, TX. TCEQ OSSF Installer I, License OS0041298. Phone 940.452.0598.
+A manual worksheet for organizing septic-system records, observed conditions and follow-up questions for the [Out West Septic](https://outwestseptic.com) project.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![TCEQ OSSF](https://img.shields.io/badge/TCEQ-OSSF_Installer_I-007787)](https://www.tceq.texas.gov/permitting/ossf)
+**This repository contains Markdown only. It does not contain an inspection workbook, PDF/JSON generator or validated pass/fail scoring system.** Copy the [blank report worksheet](outwestseptic_inspection_report.md) into a private record and agree on the inspection scope with the responsible professional before use.
 
-## What this fork is
+## Use the worksheet
 
-A focused fork of the [texas-septic-toolkit](https://github.com/TexasSepticEnthusiast/texas-septic-toolkit), containing the build spec for the inspection report workbook. Tanner or the user builds the actual `.xlsm` in Excel by following the spec and importing the embedded CSV template.
+1. Identify the project, purpose, authorized observer and agreed scope.
+2. Record which documents were reviewed and which components were accessible or tested.
+3. Write observations with units, method, date and evidence references. Keep reported history separate from direct observations.
+4. Ask the responsible professional to record interpretations, limits and follow-up actions separately. Do not average observations into a score.
 
-## What the workbook does
+Read the [review guide](wiki/Inspection-Report-Reference.md) and [open professional/owner decisions](OWNER_DECISIONS.md). This template does not establish qualifications, an inspection method, compliance or future system performance.
 
-The inspection report workbook has six sheets:
+These are automated contributions requested for the Out West Septic project. No named installer authorship, completed customer reports, prices, turnaround, license status or service coverage is asserted. Keep completed forms and evidence outside this public repository. Local research focuses on Palo Pinto County and nearby rural communities; Parker and Tarrant counties are excluded.
 
-1. Cover. Job site, date, inspector, reason, address, county.
-2. Tank. Size, material, age, condition, sludge/scum depth.
-3. Drainfield. Type, age, surfacing, odors, lateral layout.
-4. Site. Surface water, smell, recent use.
-5. Summary. Auto-calculated scores and verdict.
-6. Notes. Free-form narrative.
+## Files and reuse
 
-The verdict is Pass / Conditional Pass / Fail with recommended next steps.
+- [Manual report and input definitions](outwestseptic_inspection_report.md)
+- [Review guide](wiki/Inspection-Report-Reference.md)
+- [Professional and owner decisions](OWNER_DECISIONS.md)
+- [MIT license and inherited notice](LICENSE)
 
-Out West Septic does real estate septic inspections in Palo Pinto County and the surrounding counties for $250-$500 with 48-hour report turnaround.
-
-## Service area
-
-Out West Septic serves Palo Pinto, Hood, Erath, Stephens, Young, Jack, and Eastland counties. Mineral Wells, Graford, Possum Kingdom Lake.
-
-## License
-
-MIT. See [LICENSE](./LICENSE).
-
----
-
-Out West Septic, outwestseptic.com, 940.452.0598, TCEQ OSSF Installer I OS0041298, Lone Camp, TX
+No runtime is installed or tested here. Checks concern the actual document inventory, source links and blank recording workflow.

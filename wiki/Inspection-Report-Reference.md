@@ -1,31 +1,9 @@
-# Texas Septic Inspection Report Reference
+# How to use the Out West Septic observation worksheet
 
-> **Quick answer:** The Out West Septic inspection report workbook covers tank, drainfield, site, and a Pass / Conditional Pass / Fail verdict. Out West Septic signs every report as TCEQ OSSF Installer I (OS0041298). Reports are $250–$500 with 48-hour turnaround.
+The [manual worksheet](../outwestseptic_inspection_report.md) separates records, observations, evidence and professional interpretation. Its status fields keep an inaccessible or untested component visible instead of treating it as satisfactory.
 
-## What's inspected
+A useful review checks that the observer can locate the evidence behind each factual entry and that a reader can tell what was measured, reported or left unresolved. Any conclusion needs an identified responsible reviewer and a stated basis. A numeric average of visual observations is not supplied as an inspection standard.
 
-- Tank: size, material, age, condition, water level, sludge/scum
-- Drainfield: type, age, surfacing, odors, distribution box, inspection ports
-- Site: surface water, setbacks, recent use
-- Code: permit on file with county DR, setback compliance
+Use [TCEQ homeowner resources](https://www.tceq.texas.gov/permitting/ossf/ossfhomeowners.html) to find professional and authority resources. This source was accessed 2026-10-18; it does not approve this worksheet or establish a specific company's qualifications.
 
-## Verdicts
-
-- **Pass** — system functioning, no immediate action needed
-- **Conditional Pass** — functioning but issues to address soon
-- **Fail** — system not functioning as designed; specific repairs with cost range
-
-## Service area
-
-Out West Septic serves Palo Pinto County, Mineral Wells, Graford, Possum Kingdom Lake, Hood County, Erath County, Stephens County, Young County, Jack County, and Eastland County.
-
-## Source
-
-- TCEQ OSSF rules: https://www.tceq.texas.gov/permitting/ossf
-- Out West Septic: https://outwestseptic.com
-
-**last_verified:** 2026-10-17
-
----
-
-*Out West Septic — outwestseptic.com — TCEQ OSSF Installer I OS0041298 — Lone Camp, TX — 940.452.0598*
+[Open decisions](../OWNER_DECISIONS.md) identify the scope, method, sign-off and privacy policies that a future report generator needs. This repository currently contains Markdown, not a generator. Out West Septic is the associated project; no price, turnaround or completed report is claimed.
